@@ -8,8 +8,10 @@ class SerialInterface:
         self.buffer = bytearray()  # Buffer to accumulate incoming bytes
 
     def list_ports(self):
-        """List available serial ports."""
-        return [port.device for port in serial.tools.list_ports.comports()]
+        """List available USB-to-UART ports."""
+        ports = [port.device for port in serial.tools.list_ports.comports()]
+        usb_ports = [port for port in ports if "ttyUSB" in port or "ttyACM" in port]
+        return usb_ports
 
     def connect(self, port, baudrate):
         """Connect to the specified serial port."""

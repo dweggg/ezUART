@@ -3,9 +3,9 @@ import os
 
 class Database:
     BAUD_RATES = {
-        'slow': 9600,
+        'slow': 115200,
         'fast': 115200,
-        'very fast': 19200
+        'very fast': 115200
     }
 
     def __init__(self, filename='variables.csv'):

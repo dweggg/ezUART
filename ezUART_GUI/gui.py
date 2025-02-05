@@ -7,12 +7,12 @@ from database import Database
 import threading
 import struct
 
-class EasyUARTApp(QtWidgets.QMainWindow):
+class ezUARTApp(QtWidgets.QMainWindow):
     data_received_signal = pyqtSignal(str)  # Signal to emit received decoded data
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("EasyUART - Serial Port GUI")
+        self.setWindowTitle("ezUART - Serial Port GUI")
         self.setGeometry(100, 100, 1000, 600)
         qdarktheme.setup_theme()
 
